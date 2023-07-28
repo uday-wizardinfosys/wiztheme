@@ -1,0 +1,6 @@
+    <div class="price">
+        <span class="price__regular">{{ product.price | money }}</span>
+        {% if product.compare_at_price != blank %}
+            <span class="price__sale">{{ product.compare_at_price | money }}</span>
+        {% endif %}    
+    </div>

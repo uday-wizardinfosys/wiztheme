@@ -1,0 +1,30 @@
+.collection_banner {
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+}
+.collection_banner h1, .collection_banner .h1 {
+    margin-bottom: 30px;
+}
+.banner_image_large {
+    min-height: 620px;
+}
+.banner_image_medium {
+    min-height: 500px;
+}
+.banner_image_small {
+    min-height: 400px;
+}
+
+
+@media (min-width:768px) {
+    .banner_image_large {
+        min-height: 720px;
+    }
+    .banner_image_medium {
+        min-height: 560px;
+    }
+    .banner_image_small {
+        min-height: 480px;
+    }
+}

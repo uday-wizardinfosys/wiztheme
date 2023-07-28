@@ -1,0 +1,63 @@
+{{ 'section-main-collection-banner.css' | asset_url | stylesheet_tag }}
+
+
+<div class="collection_banner banner_image_large bg_cover bg_right_top {{ section.settings.position }}" style="background-image: url(https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Banner.jpg);">
+  <div class="page-width">
+  <div class="grid-row {{text_align}}">
+    <div class="grid-col-xl-7 grid-col-lg-8 grid-col-12">
+      <div class="banner_image_content_wrap">
+          <h1>{{ collection.title }}</h1>  
+      </div> 
+    </div>
+  </div>
+ </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Banner",
+  "settings": [
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "align-items-start",
+          "label": "t:sections.image-banner.settings.position.options__1.label"
+        },
+        {
+          "value": "align-items-center",
+          "label": "t:sections.image-banner.settings.position.options__2.label"
+        },
+        {
+          "value": "align-items-end",
+          "label": "t:sections.image-banner.settings.position.options__3.label"
+        }
+      ],
+      "id": "position",
+      "default": "align-items-center",
+      "label": "t:sections.image-banner.settings.position.label"
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "style1",
+          "label": "t:sections.image-banner.settings.text-align.options__1.label"
+        },
+        {
+          "value": "style2",
+          "label": "t:sections.image-banner.settings.text-align.options__2.label"
+        },
+        {
+          "value": "style3",
+          "label": "t:sections.image-banner.settings.text-align.options__3.label"
+        }
+      ],
+      "id": "text-align",
+      "default": "style1",
+      "label": "t:sections.image-banner.settings.text-align.label"
+    }
+
+  ]
+}
+{% endschema %}

@@ -1,0 +1,43 @@
+<div class="review_card">
+    <div class="review_card__top">
+        <div class="review_card_star">
+            <ul class="list-unstyled d-flex">
+            {% assign count = card_block.settings.review | plus: 0 %}
+            {% for i in (1 .. 5) %}             
+                <li {% if count >= i %}class="active"{% endif %} >
+                    {% render 'icon-star' %}
+                </li>
+            {% endfor %}                   
+            </ul>
+        </div>
+        <div class="review_card__content"> 
+            {{ card_block.settings.description }}
+        </div>
+    </div>
+    <div class="review_card__footer">
+        <div class="author_wrap">
+            <div class="author_img">
+                {% if card_block.settings.image != blank %}
+                    {%-liquid assign image_height = card_block.settings.image.width | divided_by: card_block.settings.image.aspect_ratio -%}
+                    {{ card_block.settings.image | image_url: width: 1500 | image_tag:
+                        loading: 'lazy',
+                        width: block.settings.image.width,
+                        height: image_height,
+                        widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                        alt: card_block.settings.image.alt | escape
+                    }}
+                {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+            </div>
+            <div class="author_content">
+                {% if card_block.settings.designation != blank %}
+                    <div class="author_position">{{ card_block.settings.designation }}</div>
+                {% endif %}    
+                {% if card_block.settings.name != blank %}
+                    <div class="author_name">{{ card_block.settings.name }}</div>
+                {% endif %}    
+            </div>
+        </div>
+    </div>
+</div>

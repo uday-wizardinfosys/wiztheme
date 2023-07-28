@@ -1,0 +1,310 @@
+{
+  "sections": {
+    "377a8443-4733-420e-8752-53ed3c4323f2": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Banner.jpg",
+        "title": "Further reductions",
+        "sub-title": "up to 70% off on sale",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.In rhoncus augue nibh, at ullamcorper orci ullamcorper ut.<\/p>",
+        "btn-name": "Explore Collection",
+        "btn-link": "",
+        "position": "align-items-center",
+        "text-align": "style1"
+      }
+    },
+    "030a76a4-3c61-459a-8a12-ef0ded7e1e79": {
+      "type": "image-block",
+      "blocks": {
+        "bb9922f3-2ba2-44bb-9fbf-a7fb6d2e6f9f": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-tree.png",
+            "title": "Loream ipsum",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>"
+          }
+        },
+        "4f41a985-d1d5-4b17-95a1-70622509ee3d": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-wallet.png",
+            "title": "Loream ipsum",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>"
+          }
+        },
+        "7f7f1e1b-fb9c-4d0b-9dc7-fda6658d7c82": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-chat.png",
+            "title": "Loream ipsum",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "bb9922f3-2ba2-44bb-9fbf-a7fb6d2e6f9f",
+        "4f41a985-d1d5-4b17-95a1-70622509ee3d",
+        "7f7f1e1b-fb9c-4d0b-9dc7-fda6658d7c82"
+      ],
+      "settings": {
+      }
+    },
+    "52156f5c-a12a-4150-8f80-2e5a87a6bfcb": {
+      "type": "featured-products",
+      "blocks": {
+        "0cdd7d9c-4810-460d-907a-5991e58db9c3": {
+          "type": "product",
+          "settings": {
+            "product": "crochet-mini-dress"
+          }
+        },
+        "e1defb16-966e-415e-8c0e-274b5f8dd60f": {
+          "type": "product",
+          "settings": {
+            "product": "crochet-mini-dress"
+          }
+        },
+        "03e03bfd-a38c-40dc-ba72-2ad26bf91761": {
+          "type": "product",
+          "settings": {
+            "product": "crochet-mini-dress"
+          }
+        },
+        "71f50cc8-d495-4b73-a989-48c48ea4691d": {
+          "type": "product",
+          "settings": {
+            "product": "crochet-mini-dress"
+          }
+        }
+      },
+      "block_order": [
+        "0cdd7d9c-4810-460d-907a-5991e58db9c3",
+        "e1defb16-966e-415e-8c0e-274b5f8dd60f",
+        "03e03bfd-a38c-40dc-ba72-2ad26bf91761",
+        "71f50cc8-d495-4b73-a989-48c48ea4691d"
+      ],
+      "settings": {
+        "title": "New Arrivals",
+        "btn-name": "VIEW MORE",
+        "btn-link": ""
+      }
+    },
+    "284794f4-7e42-4b35-b1fa-3265d453c443": {
+      "type": "image-with-text-vertical",
+      "blocks": {
+        "20c1a2bc-72fd-4a70-8e8d-64530113f970": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/woman-in-summer-floral-fashion.jpg",
+            "title": "Lorem ipsum",
+            "sub-title": "",
+            "btn-name": "Learn More",
+            "btn-link": ""
+          }
+        },
+        "6e46d91b-45ae-4c3b-a60e-262f11ab1206": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/man-in-summer-floral-fashion.jpg",
+            "title": "Lorem ipsum",
+            "sub-title": "",
+            "btn-name": "Learn More",
+            "btn-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "20c1a2bc-72fd-4a70-8e8d-64530113f970",
+        "6e46d91b-45ae-4c3b-a60e-262f11ab1206"
+      ],
+      "settings": {
+      }
+    },
+    "60e8c1fd-bf78-4609-80e4-3061f997865a": {
+      "type": "image-with-text",
+      "settings": {
+        "paddingtop": 80,
+        "paddingbottom": 80,
+        "bg-color": "bg-primary",
+        "position": "align-items-center",
+        "column-reverse": false,
+        "image": "shopify:\/\/shop_images\/girls.jpg",
+        "title": "Everything we create is inspired by real girls, real life.",
+        "description": "<p>We don't accept ordinary. We believe everyone has the power to be ordinary. Our clothing and accessories provide a platform for self-expression served up with a slice of keeping it real.<\/p>",
+        "btn-name": "Women Collection",
+        "btn-link": ""
+      }
+    },
+    "a67ec5e2-362c-4544-946b-7ae9c9b8f9b2": {
+      "type": "shop-look",
+      "blocks": {
+        "f2a9f9e7-6a18-469d-b28c-9e7a9c6d66ff": {
+          "type": "product",
+          "settings": {
+            "product": "corset-knit-tank"
+          }
+        },
+        "6045b750-20aa-4b03-b321-3ea7d23370b6": {
+          "type": "product",
+          "settings": {
+            "product": "wide-knit-pants"
+          }
+        }
+      },
+      "block_order": [
+        "f2a9f9e7-6a18-469d-b28c-9e7a9c6d66ff",
+        "6045b750-20aa-4b03-b321-3ea7d23370b6"
+      ],
+      "settings": {
+        "offer": "50%",
+        "image": "shopify:\/\/shop_images\/look-image-1.png",
+        "title": "Shop the look",
+        "sub-title": "Monochromatic outfits for the season."
+      }
+    },
+    "c0b6095c-9669-4c76-97b6-9f980ed9e426": {
+      "type": "featured-collections",
+      "blocks": {
+        "c5272680-45af-4d16-acf5-b618eed69b51": {
+          "type": "collection",
+          "settings": {
+            "coll": "women"
+          }
+        },
+        "71ec4614-76c1-4ab5-92ff-9865e9e54407": {
+          "type": "collection",
+          "settings": {
+            "coll": "women"
+          }
+        },
+        "66b6bca6-5bfe-4000-aabe-eb14bb91a0b1": {
+          "type": "collection",
+          "settings": {
+            "coll": "women"
+          }
+        }
+      },
+      "block_order": [
+        "c5272680-45af-4d16-acf5-b618eed69b51",
+        "71ec4614-76c1-4ab5-92ff-9865e9e54407",
+        "66b6bca6-5bfe-4000-aabe-eb14bb91a0b1"
+      ],
+      "settings": {
+        "title": "Discover our products",
+        "description": "<p>Believe what you see!<\/p>",
+        "btn-title": "View More",
+        "btn-link": "shopify:\/\/collections"
+      }
+    },
+    "80a4dd7f-bcd1-4766-92b8-27a19521d623": {
+      "type": "brands",
+      "blocks": {
+        "655363eb-dea3-4cfa-aee3-bde3101b0536": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LOGO-PLACEHOLDER-7.png"
+          }
+        },
+        "58dee6c7-70e6-44bb-a901-32952a2be19e": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LOGO-PLACEHOLDER-4.png"
+          }
+        },
+        "a49057b0-ea00-42aa-9a53-5932eab693ad": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LOGO-PLACEHOLDER-5.png"
+          }
+        },
+        "6aeeb22d-2bd2-46e6-a9dd-b7798b815eb4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LOGO-PLACEHOLDER-6.png"
+          }
+        },
+        "950e7c87-70d7-4fa4-ae23-e91fb34b2eb9": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LOGO-PLACEHOLDER-2.png"
+          }
+        }
+      },
+      "block_order": [
+        "655363eb-dea3-4cfa-aee3-bde3101b0536",
+        "58dee6c7-70e6-44bb-a901-32952a2be19e",
+        "a49057b0-ea00-42aa-9a53-5932eab693ad",
+        "6aeeb22d-2bd2-46e6-a9dd-b7798b815eb4",
+        "950e7c87-70d7-4fa4-ae23-e91fb34b2eb9"
+      ],
+      "settings": {
+        "title": "As seen in"
+      }
+    },
+    "c58bccfb-f781-4ee5-a018-531def62e61a": {
+      "type": "reviews",
+      "blocks": {
+        "template--15992652431532__c58bccfb-f781-4ee5-a018-531def62e61a-1671685436eb871e31-0": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/author-img-1.png",
+            "name": "Roboto Dose",
+            "designation": "Head Of Offcer",
+            "description": "<p>Few brands manage to harness the talent of French and Italian mills in a way that honours the tradition of the makers. Here Chanet excels as the challenger.<\/p>",
+            "review": "5"
+          }
+        },
+        "template--15992652431532__c58bccfb-f781-4ee5-a018-531def62e61a-1671685436eb871e31-1": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/author-img-2.png",
+            "name": "Pavel Nedved",
+            "designation": "Head Of Offcer",
+            "description": "<p>Few brands manage to harness the talent of French and Italian mills in a way that honours the tradition of the makers. Here Chanet excels as the challenger.<\/p>",
+            "review": "5"
+          }
+        },
+        "template--15992652431532__c58bccfb-f781-4ee5-a018-531def62e61a-1671685436eb871e31-2": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ellipse_50.png",
+            "name": "Roboto Dose",
+            "designation": "Head Of Offcer",
+            "description": "<p>Few brands manage to harness the talent of French and Italian mills in a way that honours the tradition of the makers. Here Chanet excels as the challenger.<\/p>",
+            "review": "4"
+          }
+        }
+      },
+      "block_order": [
+        "template--15992652431532__c58bccfb-f781-4ee5-a018-531def62e61a-1671685436eb871e31-0",
+        "template--15992652431532__c58bccfb-f781-4ee5-a018-531def62e61a-1671685436eb871e31-1",
+        "template--15992652431532__c58bccfb-f781-4ee5-a018-531def62e61a-1671685436eb871e31-2"
+      ],
+      "settings": {
+        "title": "What our clients says",
+        "btn-name": "View All",
+        "btn-link": ""
+      }
+    },
+    "1287781c-4d29-4eeb-af07-ddc70c359f4c": {
+      "type": "featured-blogs",
+      "settings": {
+        "title": "From the blog",
+        "btn-name": "View All",
+        "btn-link": "shopify:\/\/blogs\/news"
+      }
+    }
+  },
+  "order": [
+    "377a8443-4733-420e-8752-53ed3c4323f2",
+    "030a76a4-3c61-459a-8a12-ef0ded7e1e79",
+    "52156f5c-a12a-4150-8f80-2e5a87a6bfcb",
+    "284794f4-7e42-4b35-b1fa-3265d453c443",
+    "60e8c1fd-bf78-4609-80e4-3061f997865a",
+    "a67ec5e2-362c-4544-946b-7ae9c9b8f9b2",
+    "c0b6095c-9669-4c76-97b6-9f980ed9e426",
+    "80a4dd7f-bcd1-4766-92b8-27a19521d623",
+    "c58bccfb-f781-4ee5-a018-531def62e61a",
+    "1287781c-4d29-4eeb-af07-ddc70c359f4c"
+  ]
+}

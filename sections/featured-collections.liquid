@@ -1,0 +1,104 @@
+{{ 'component-collection-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-featured-collections.css' | asset_url | stylesheet_tag }}
+
+<div class="featured_collections_wrapper">
+    <div class="page-width">
+        <div class="featured_collections_top">
+            <div class="featured_collections_title_wrapper">
+                {% if section.settings.title != blank %}
+                    <h2 class="featured_collections_title">{{ section.settings.title }}</h2>
+                {% endif %}    
+                {{ section.settings.description }}
+            </div>
+            <div class="slider_arrow_btns d-flex">
+                <div class="slider_arrow slider_arrow_prev slider_arrow_disable">{% render 'icon-angle-left-lg' %}</div>
+                <div class="slider_arrow slider_arrow_next">{% render 'icon-angle-right-lg' %}</div>
+            </div>
+        </div>
+        <div class="grid-row">
+            {% if section.blocks.size != 0 %}
+                {% for block in section.blocks %}
+                    {% assign collection = block.settings.coll %}
+                    <div class="grid-col-md-4 grid-col-sm-6 grid-col-12">
+                        {% render 'collection-card',card_collection:collection %}
+                    </div>
+                {% endfor %}
+            {% else %} 
+                {% for i in (1..3) %}
+                    <div class="grid-col-md-4 grid-col-sm-6 grid-col-12">
+                        {% render 'collection-card' %}
+                    </div>
+                {% endfor %}
+            {% endif %}              
+        </div>
+        {% if section.settings.btn-title != blank %}
+            <div class="btn_wrap text-center">
+                <a href="{{ section.settings.btn-link }}" class="btn btn-arrow btn-transparent">{{ section.settings.btn-title }}{% render 'icon-arrow-right' %}</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.featured-collection.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+        "type":"text",
+        "id":"title",
+        "label":"t:sections.featured-collection.settings.title.label",
+        "default":"Discover Our products"
+    },
+    {
+        "type":"richtext",
+        "id":"description",
+        "label":"t:sections.featured-collection.settings.description.label",
+        "default":"<p>Believe what you see!</p>"
+    },
+    {
+        "type":"text",
+        "id":"btn-title",
+        "label":"t:sections.featured-collection.settings.btn-title.label",
+        "default":"View More"
+    },
+    {
+        "type":"url",
+        "id":"btn-link",
+        "label":"t:sections.featured-collection.settings.btn-link.label"        
+    }
+  ],
+  "blocks":[
+    {
+        "type":"collection",
+        "name":"t:sections.featured-collection.blocks.name",
+        "settings":[
+            {
+                "type":"collection",
+                "id":"coll",
+                "label":"t:sections.featured-collection.blocks.label"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured-collection.presets.name",
+      "blocks":[
+        {
+            "type":"collection"
+        },
+        {
+            "type":"collection"
+        },
+        {
+            "type":"collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

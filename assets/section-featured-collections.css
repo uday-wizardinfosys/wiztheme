@@ -1,0 +1,19 @@
+.featured_collections_wrapper {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.featured_collections_top {
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.featured_collections_wrapper .btn_wrap {
+    margin-top: 50px;
+}
+@media (min-width:992px) {
+    .featured_collections_title {
+        margin-bottom: 3px;
+    }
+}
+

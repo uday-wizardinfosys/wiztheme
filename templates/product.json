@@ -1,0 +1,130 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "cd8fce3a-82b2-4cc5-9be9-8e80de30390c": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
+        "dc4a2993-0143-46c8-83d7-60dc1e73353b": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "07c21ed7-01ab-41c1-ae9a-c1742b796a75": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "e46e77bb-ebb4-4072-965f-141fea8331b2": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "40482258-1768-4b3f-a426-7542a5324f36": {
+          "type": "variation",
+          "settings": {
+          }
+        },
+        "349f18e1-40b8-4b8b-a034-9ed4f2ba42b4": {
+          "type": "addtocart",
+          "settings": {
+            "qty": true,
+            "buy": true
+          }
+        }
+      },
+      "block_order": [
+        "cd8fce3a-82b2-4cc5-9be9-8e80de30390c",
+        "dc4a2993-0143-46c8-83d7-60dc1e73353b",
+        "07c21ed7-01ab-41c1-ae9a-c1742b796a75",
+        "e46e77bb-ebb4-4072-965f-141fea8331b2",
+        "40482258-1768-4b3f-a426-7542a5324f36",
+        "349f18e1-40b8-4b8b-a034-9ed4f2ba42b4"
+      ],
+      "settings": {
+      }
+    },
+    "b41c12e9-3a33-485f-be32-2b7ecc718582": {
+      "type": "image-block",
+      "blocks": {
+        "template--16035137159340__b41c12e9-3a33-485f-be32-2b7ecc718582-1676371198c8666ceb-0": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/made.png",
+            "title": "",
+            "description": "<p>Responsibly made<\/p>"
+          }
+        },
+        "template--16035137159340__b41c12e9-3a33-485f-be32-2b7ecc718582-1676371198c8666ceb-1": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/recycle.png",
+            "title": "",
+            "description": "<p>Renewed materials<\/p>"
+          }
+        },
+        "template--16035137159340__b41c12e9-3a33-485f-be32-2b7ecc718582-1676371198c8666ceb-2": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/product-icon.png",
+            "title": "",
+            "description": "<p>Designed to last<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16035137159340__b41c12e9-3a33-485f-be32-2b7ecc718582-1676371198c8666ceb-0",
+        "template--16035137159340__b41c12e9-3a33-485f-be32-2b7ecc718582-1676371198c8666ceb-1",
+        "template--16035137159340__b41c12e9-3a33-485f-be32-2b7ecc718582-1676371198c8666ceb-2"
+      ],
+      "settings": {
+      }
+    },
+    "30126685-a245-4985-8a50-a02f2d4d8247": {
+      "type": "image-with-text",
+      "settings": {
+        "paddingtop": 80,
+        "paddingbottom": 40,
+        "bg-color": "bg-transparent",
+        "position": "align-items-center",
+        "column-reverse": true,
+        "image": "shopify:\/\/shop_images\/New_Project_2.jpg",
+        "title": "The sustainable choice",
+        "description": "<p>Wardrobe staples created with all-natural and luxurious fabrics. To wear every day, for any occasion. Created with integrity, keeping the planet in mind. Pieces to wear and love forever.<\/p>",
+        "btn-name": "",
+        "btn-link": ""
+      }
+    },
+    "2ece27a7-209b-49c9-bed8-b24d75105ba4": {
+      "type": "image-with-text",
+      "settings": {
+        "paddingtop": 40,
+        "paddingbottom": 80,
+        "bg-color": "bg-transparent",
+        "position": "align-items-center",
+        "column-reverse": false,
+        "image": "shopify:\/\/shop_images\/New_Project_1.jpg",
+        "title": "Everything we create",
+        "description": "<p>We don't accept ordinary. We believe everyone has the power to be ordinary. <\/p>",
+        "btn-name": "",
+        "btn-link": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "title": "New Arrivals"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b41c12e9-3a33-485f-be32-2b7ecc718582",
+    "30126685-a245-4985-8a50-a02f2d4d8247",
+    "2ece27a7-209b-49c9-bed8-b24d75105ba4",
+    "product-recommendations"
+  ]
+}

@@ -1,0 +1,162 @@
+.quickview_modal .modal_body {
+    padding: 0 0;
+}
+.quickview_product_slider_slide img {
+    width: 100%;
+}
+.quickview_product_content {
+    padding: 70px 45px 70px 20px;
+}
+.quickview_product_title {
+    margin-bottom: 10px;
+}
+.quickview_product_price {
+    margin-bottom: 15px;
+}
+.quickview_product_price .price {
+    font-size: 18px;
+}
+.quickview_product_description {
+    margin: 26px 0 20px;
+}
+.quickview_product_size_selector_wrap, .quickview_product_color_selector_wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.quickview_product_size_selector_title, .quickview_product_color_selector_title {
+    flex-shrink: 0;
+    font-size: 14px;
+    line-height: 14px;
+    margin-right: 15px;
+}
+.quickview_product_size_selector, .quickview_product_color_selector {
+    display: flex;
+    flex-wrap: wrap;
+}
+.quickview_product_size_selector_radio, .quickview_product_color_selector_radio {
+    position: relative;
+    display: inherit;
+}
+.quickview_product_size_selector_radio [type="radio"], .quickview_product_color_selector_radio [type="radio"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+.quickview_product_size_selector_label {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border-radius: 3px;
+    padding: 4px 9px;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 15px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.quickview_product_size_selector_label:hover,
+.quickview_product_size_selector_radio [type="radio"]:checked + .quickview_product_size_selector_label {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+.quickview_product_color_selector_label {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background-color: #D4475D;
+    cursor: pointer;
+    transition: var(--base-transition);
+}
+.quickview_product_color_selector_label::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    width: 10px;
+    height: 5px;
+    border-style: solid;
+    border-color: var(--color-white);
+    border-width: 0 0 1px 1px;
+    transform: rotate(-45deg);
+    opacity: 0;
+}
+.quickview_product_color_selector_label:hover,
+.quickview_product_color_selector_radio [type="radio"]:checked + .quickview_product_color_selector_label {
+    -webkit-box-shadow: 0px 0px 3px 3px rgba(var(--color-black-rgb), 0.3);
+    box-shadow: 0px 0px 3px 3px rgba(var(--color-black-rgb), 0.3);
+}
+.quickview_product_color_selector_radio [type="radio"]:checked + .quickview_product_color_selector_label::after {
+    opacity: 1;
+}
+
+.quickview_product_btns_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.quickview_product_quantity_selector {
+    padding: 6px 8px;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    display: flex;
+    width: 39%;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+.quickview_product_quantity_selector_input {
+    border: 0;
+    border-radius: 0;
+    padding: 7px 10px;
+    margin: 0;
+    width: 20px;
+    min-width: unset;
+    display: inline-block;
+    background: transparent;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    flex: 1;
+}
+.quickview_product_quantity_btn {
+    padding: 10px 0;
+    border-radius: 0;
+    border: 0;
+    width: 26px;
+    height: 36px;
+}
+.quickview_product_quantity_btn:hover, .quickview_product_quantity_btn:focus {
+    background-color: var(--color-white);
+}
+.quickview_product_btns_wrap .btn-add-to-cart {
+    margin-bottom: 16px;
+    flex: 1;
+}
+.quickview_product_btns_wrap .btn-checkout {
+    width: 100%;
+}
+
+@media (max-width:991px) {
+    .quickview_product_content {
+        padding: 40px 20px;
+    }
+}
+@media (max-width:767px) {
+    .quickview_product_btns_wrap {
+        flex-direction: column;
+    }
+    .quickview_product_quantity_selector {
+        width: 100%;
+        margin-right: 0;
+    }
+}

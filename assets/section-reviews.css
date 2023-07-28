@@ -1,0 +1,23 @@
+.reviews_wrapper {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+@media (min-width:992px){
+    .reviews__title_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 10px;
+        margin-bottom: 51px;
+    }
+    .reviews_title {
+        margin-bottom: 0;
+    }
+}
+
+
+@media (max-width:991px) {
+    .reviews__title_wrapper {
+        margin-bottom: 30px;
+    }
+}

@@ -1,0 +1,94 @@
+{{ 'section-brands.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+@media (min-width:992px) {
+    .brand_wrapper {
+        padding-top: 65px;
+        padding-bottom: 45px;
+    }
+}
+{% endstyle %}
+
+<div class="brand_wrapper bg-primary">
+    <div class="page-width">
+        {% if section.settings.title != blank %}
+            <div class="brand_title_wrapper text-center">
+                <h2 class="brand_title">{{ section.settings.title }}</h2>
+            </div>
+        {% endif %}
+        {% if section.blocks.size != blank %}
+            <div class="grid-row justify-content-between">
+                {% for block in section.blocks %}
+                    <div class="grid-col">
+                        <div class="brand_block">
+                            {% if block.settings.image != blank %}
+                                {%-liquid assign image_height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio -%}
+                                {{ block.settings.image | image_url: width: 1500 | image_tag:
+                                loading: 'lazy',
+                                width: block.settings.image.width,
+                                height: image_height,
+                                widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                                alt: block.settings.image.alt | escape
+                                }}
+                            {% else %}
+                                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                            {% endif %}
+                        </div>
+                    </div>                
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>    
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.brand.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+        "type":"text",
+        "id":"title",
+        "label":"t:sections.brand.settings.title.label",
+        "default":"As seen in"
+    }
+  ],
+  "blocks":[
+    {
+        "type":"logo",
+        "name":"t:sections.brand.blocks.name",
+        "settings":[
+            {
+                "type":"image_picker",
+                "id":"image",
+                "label":"t:sections.brand.blocks.settings.image.label"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.brand.presets.name",
+      "blocks":[
+        {
+            "type":"logo"
+        },
+        {
+            "type":"logo"
+        },
+        {
+            "type":"logo"
+        },
+        {
+            "type":"logo"
+        },
+        {
+            "type":"logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,131 @@
+
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.image.size != blank -%}
+  {%- assign img_url = section.settings.image | img_url:'master' -%}
+{%- else -%}
+  {%- assign img_url = '' -%}
+{%- endif -%}
+{% if section.settings.text-align == 'style1' %}
+   {% assign text_align = 'justify-content-start' %}
+{% elsif section.settings.text-align == 'style2' %}
+   {% assign text_align = 'justify-content-center text-center mx-auto' %}
+{% elsif section.settings.text-align == 'style3' %}
+   {% assign text_align = 'justify-content-end' %}
+{% endif %}
+<div class="banner_image_wrapper banner_image_large bg_cover bg_right_top {{ section.settings.position}}" style="background-image: url({{img_url}});">
+    <div class="page-width">
+    <div class="grid-row {{text_align}}">
+      <div class="grid-col-xl-7 grid-col-lg-8 grid-col-12">
+        <div class="banner_image_content_wrap">
+          {%- if section.settings.title != blank or section.settings.sub-title != blank -%}
+            <h1>{{ section.settings.title }}<br/>{{ section.settings.sub-title }}</h1>
+          {%- endif -%}  
+          {%- if section.settings.description != blank -%}
+            <div class="content {% if section.settings.text-align == 'style2' %}mx-auto{% endif %}">
+              {{ section.settings.description }}
+            </div>
+          {%- endif -%}
+          {%- if section.settings.btn-name != blank -%}
+            <div class="btn_wrap">
+              <a href="{{ section.settings.btn-link }}" class="btn btn-white btn-arrow">{{ section.settings.btn-name }} {% render 'icon-arrow-right' %}</a>
+            </div>
+          {%- endif -%}  
+        </div> 
+      </div>
+    </div>
+   </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "t:sections.image-banner.name",
+  "tag": "section",
+  "class": "section-image-banner",
+  "settings": [
+    {
+      "type":"image_picker",
+      "id":"image",
+      "label":"t:sections.image-banner.settings.image.label"
+    },
+    {
+      "type":"text",
+      "id":"title",
+      "label":"t:sections.image-banner.settings.title.label",
+      "default":"Further Reductions"
+    },
+    {
+      "type":"text",
+      "id":"sub-title",
+      "label":"t:sections.image-banner.settings.sub-title.label",
+      "default":"Up To 70% Off On Sale"
+    },
+    {
+      "type":"richtext",
+      "id":"description",
+      "label":"t:sections.image-banner.settings.description.label",
+      "default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.In rhoncus augue nibh, at ullamcorper orci ullamcorper ut.<\/p>"
+    },
+    {
+      "type":"text",
+      "id":"btn-name",
+      "label":"t:sections.image-banner.settings.btn-name.label",
+      "default":"Explore Collection"
+    },
+    {
+      "type":"url",
+      "id":"btn-link",
+      "label":"t:sections.image-banner.settings.btn-link.label"
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "align-items-start",
+          "label": "t:sections.image-banner.settings.position.options__1.label"
+        },
+        {
+          "value": "align-items-center",
+          "label": "t:sections.image-banner.settings.position.options__2.label"
+        },
+        {
+          "value": "align-items-end",
+          "label": "t:sections.image-banner.settings.position.options__3.label"
+        }
+      ],
+      "id": "position",
+      "default": "align-items-center",
+      "label": "t:sections.image-banner.settings.position.label"
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "style1",
+          "label": "t:sections.image-banner.settings.text-align.options__1.label"
+        },
+        {
+          "value": "style2",
+          "label": "t:sections.image-banner.settings.text-align.options__2.label"
+        },
+        {
+          "value": "style3",
+          "label": "t:sections.image-banner.settings.text-align.options__3.label"
+        }
+      ],
+      "id": "text-align",
+      "default": "style1",
+      "label": "t:sections.image-banner.settings.text-align.label"
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "t:sections.image-banner.presets.name"
+    }
+  ]
+}
+{% endschema %}

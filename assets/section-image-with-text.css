@@ -1,0 +1,28 @@
+.image_with_text--content .content {
+    max-width: 480px;
+}
+.image_with_text--content .btn_wrap {
+    margin-top: 30px;
+}
+/* .image_with_text--img {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+} */
+
+@media (min-width: 992px) {
+    .image_with_text--content-title {
+        margin-bottom: 35px;
+    }
+    .image_with_text--content .btn_wrap {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width:991px) {
+    .image_with_text--img {
+        margin-bottom: 50px;
+    }
+    .image_with_text--content .content {
+        max-width: 100%;
+    }
+}

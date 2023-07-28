@@ -1,0 +1,163 @@
+{{ 'section-image-with-text.css' | asset_url | stylesheet_tag }}
+
+
+{% style %}
+.{{ section.id }}-section--padding {
+    padding-top: {{ section.settings.paddingtop | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.paddingbottom | times: 0.75 | round: 0 }}px;
+}
+
+@media (min-width:992px) {
+    .{{ section.id }}-section--padding {
+        padding-top: {{ section.settings.paddingtop }}px;
+        padding-bottom: {{ section.settings.paddingbottom }}px;
+    }
+}
+{% endstyle %}
+
+<div id="{{ section.id }}" class="image_with_text_wrapper {{ section.settings.bg-color }} {{ section.id }}-section--padding">
+    <div class="page-width">
+        <div class="grid-row justify-content-between  {{ section.settings.position }} {% if section.settings.column-reverse %}flex-row-reverse{% endif %}">
+            <div class="grid-col-xl-6 grid-col-lg-6 grid-col-12">
+                <div class="image_with_text--img">
+                    {% if section.settings.image != blank %}
+                        {%-liquid assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio -%}
+                        {{ section.settings.image | image_url: width: 1500 | image_tag:
+                            loading: 'lazy',
+                            width: section.settings.image.width,
+                            height: section.settings.image.height,
+                            widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                            alt: section.settings.image.alt | escape
+                        }}                                
+                    {% else %}
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}    
+                    {% endif %}                    
+                </div>
+            </div>
+            <div class="grid-col-xl-5 grid-col-lg-6 grid-col-12">
+                <div class="image_with_text--content">
+                    {% if section.settings.title != blank %}
+                        <h2>{{ section.settings.title }}</h2>
+                    {% endif %}
+                    {% if section.settings.description != blank %}
+                        <div class="content">
+                            {{ section.settings.description }}
+                        </div>
+                    {% endif %}
+                    {% if section.settings.btn-name != blank %}
+                        <div class="btn_wrap">
+                            <a href="{{ section.settings.btn-link }}" class="btn {% if section.settings.bg-color == 'bg-transparent' %}btn-primary{% else %}btn-white{% endif %} btn-arrow">{{ section.settings.btn-name }} {% render 'icon-arrow-right' %}</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "t:sections.image-with-text.name",
+  "tag": "section",
+  "class": "section-image-with-text",
+  "settings": [
+    {
+        "type": "range",
+        "id": "paddingtop",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "default": 80,
+        "label":"Padding top"
+    },
+    {
+        "type": "range",
+        "id": "paddingbottom",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "default": 80,
+        "label":"Padding bottom"
+    },
+    {
+        "type": "select",
+        "options": [
+          {
+            "value": "bg-primary",
+            "label": "Primary Color"
+          },
+          {
+            "value": "bg-transparent",
+            "label": "Transparent"
+          }
+        ],
+        "id": "bg-color",
+        "default": "bg-primary",
+        "label": "Background color"
+    },  
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "align-items-start",
+          "label": "t:sections.image-with-text.settings.position.options__1.label"
+        },
+        {
+          "value": "align-items-center",
+          "label": "t:sections.image-with-text.settings.position.options__2.label"
+        },
+        {
+          "value": "align-items-end",
+          "label": "t:sections.image-with-text.settings.position.options__3.label"
+        }
+      ],
+      "id": "position",
+      "default": "align-items-center",
+      "label": "t:sections.image-with-text.settings.position.label"
+    },  
+    {
+        "type":"checkbox",
+        "id":"column-reverse",
+        "label":"t:sections.image-with-text.settings.column-reverse.label"
+    },
+    {
+        "type":"image_picker",
+        "id":"image",
+        "label":"t:sections.image-with-text.settings.image.label"
+    },
+    {
+        "type":"text",
+        "id":"title",
+        "label":"t:sections.image-with-text.settings.title.label",
+        "default":"Everything we create is inspired by real girls, real life."
+    },
+    {
+        "type":"richtext",
+        "id":"description",
+        "label":"t:sections.image-with-text.settings.description.label",
+        "default":"<p>We don't accept ordinary. We believe everyone has the power to be ordinary. Our clothing and accessories provide a platform for self-expression served up with a slice of keeping it real.</p>"
+    },
+    {
+        "type":"text",
+        "id":"btn-name",
+        "label":"t:sections.image-with-text.settings.btn-name.label",
+        "default":"Women Collection"
+    },
+    {
+        "type":"url",
+        "id":"btn-link", 
+        "label":"t:sections.image-with-text.settings.btn-link.label"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "t:sections.image-with-text.presets.name"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,86 @@
+{{ 'section-image-block.css' | asset_url | stylesheet_tag }}
+{% if section.blocks.size != 0 %}
+<div class="image_block_wrapper">
+    <div class="page-width">
+        <div class="grid-row justify-content-center">
+          {% for block in section.blocks %}
+            <div class="grid-col-lg-4 grid-col-md-6 grid-col-12">
+                <div class="image_block--block text-center">
+                    <div class="image_block--block-img">
+                    {% if block.settings.image != blank %}
+                        {%-liquid assign image_height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio -%}
+                        {{ block.settings.image | image_url: width: 1500 | image_tag:
+                          loading: 'lazy',
+                          width: block.settings.image.width,
+                          height: image_height,
+                          widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                          alt: block.settings.image.alt | escape
+                        }}
+                    {% else %}
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}    
+                    </div>
+                    <div class="image_block--content">
+                      {% if block.settings.title != blank %}
+                        <h4 class="h5 image_block--content-title">{{ block.settings.title }}</h4>
+                      {% endif %}
+                      {{ block.settings.description }}
+                    </div>
+                </div>
+            </div>
+          {% endfor %}            
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "t:sections.image-block.name",
+  "tag": "section",
+  "class": "section-image-block",
+  "blocks": [
+    {
+      "type":"box",
+      "name":"t:sections.image-block.blocks.name",
+      "settings":[
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"t:sections.image-block.blocks.settings.image.label"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"t:sections.image-block.blocks.settings.title.label",
+          "default":"Loream ipsum"
+        },
+        {
+          "type":"richtext",
+          "id":"description",
+          "label":"t:sections.image-block.blocks.settings.description.label",
+          "default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+        }
+      ]
+    }  
+  ],
+
+  "presets": [
+    {
+      "name": "t:sections.image-block.presets.name",
+      "blocks": [
+        {
+          "type": "box"
+        },
+        {
+          "type": "box"
+        },
+        {
+          "type": "box"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

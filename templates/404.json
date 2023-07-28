@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

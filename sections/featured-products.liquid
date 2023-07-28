@@ -1,0 +1,82 @@
+{{ 'component-product-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'section-featured-products.css' | asset_url | stylesheet_tag }}
+
+<div class="featured_products_wrapper">
+    <div class="page-width">
+        <div class="featured_products_top">
+            {% if section.settings.title != blank %}
+                <div class="featured_products_title_wrapper">
+                    <h2 class="featured_products_title">{{ section.settings.title }}</h2>
+                </div>
+            {% endif %}
+            <div class="featured_products_btns slider_arrow_btns d-flex">
+                <div class="slider_arrow slider_arrow_prev slider_arrow_disable">{% render 'icon-angle-left-lg' %}</div>
+                <div class="slider_arrow slider_arrow_next">{% render 'icon-angle-right-lg' %}</div>
+            </div>
+        </div>
+        <div class="grid-row">
+            {% for block in section.blocks %}
+                {% assign product = block.settings.product %}
+               
+                <div class="grid-col-lg-3 grid-col-md-6 grid-col-12"> 
+                    {% render 'product-card',card_product:product %}
+                </div>
+            {% endfor %}            
+        </div>
+        {% if section.settings.btn-name != blank %}
+            <div class="btn_wrap text-center">
+                <a href="{{ section.settings.btn-link }}" class="btn btn-transparent btn-arrow">{{ section.settings.btn-name }} {% render 'icon-arrow-right' %}</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": "Featured products",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+        "type":"text",
+        "id":"title",
+        "label":"Title",
+        "default":"New Arrivals"
+    },
+    {
+        "type":"text",
+        "id":"btn-name",
+        "label":"Button Name",
+        "default":"VIEW MORE"
+    },
+    {
+        "type":"url",
+        "id":"btn-link",
+        "label":"Button Link"
+    }
+  ],
+  "blocks":[
+    {
+        "type":"product",
+        "name":"Product",
+        "settings":[
+            {
+                "type":"product",
+                "id":"product",
+                "label":"Select Product"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured products"
+    }
+  ]
+}
+{% endschema %}
+

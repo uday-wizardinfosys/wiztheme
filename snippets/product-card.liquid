@@ -1,0 +1,102 @@
+<div class="product_card">
+    <div class="product_card__image">       
+            
+            {%- if card_product.featured_media -%}
+                <img
+                    srcset="
+                    {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if card_product.featured_media.width >= 533 -%}{{ card_product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if card_product.featured_media.width >= 720 -%}{{ card_product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if card_product.featured_media.width >= 940 -%}{{ card_product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
+                    {%- if card_product.featured_media.width >= 1066 -%}{{ card_product.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
+                    {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w
+                    "
+                    src="{{ card_product.featured_media | image_url: width: 533 }}"
+                    sizes="(min-width: 1200px) {{ 1200 | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                    alt="{{ card_product.featured_media.alt | escape }}"
+                    class="motion-reduce"
+                    {% unless lazy_load == false %}
+                    loading="lazy"
+                    {% endunless %}
+                    width="{{ card_product.featured_media.width }}"
+                    height="auto"
+                >
+        {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}        
+       
+        <div class="product_card__badges {% if settings.badge_position == 'top-right' %}text-right{% endif %}">
+            {% if card_product.compare_at_price != blank %}
+                <span class="badge sale_badge">Sale</span>
+            {% endif %}
+            {% if card_product.available == false %}
+                <span class="badge sold_badge">Sold out</span>
+            {% endif %}    
+        </div>
+        <div class="product_card__image_overlay">
+            <a href="{{ card_product.url }}" class="btn btn-white" data-product-id="{{ card_product.handle }}" data-modal-toggle="modal" data-modal-target="#quickviewModal">QUICK VIEW</a>
+        </div>
+    </div>
+    <div class="product_card__content">
+        <h3 class="h4 product_card__title"><a href="{{ card_product.url }}" class="text-reset">{{ card_product.title }}</a></h3>
+        {% render 'product-price',product:card_product %}        
+        {% if card_product.variants.size > 1 %}
+            <div class="product_card__optoins d-none">                
+                {% for option in card_product.options %}
+                    {% if option == "Size" or option == "size" %}
+                        <div class="product_card__optoins_size">
+                            {% assign index = forloop.index0 %}
+                            {% assign sizelist = '' %}
+                            {% assign size = '' %}
+                            {% for variant in card_product.variants %}
+                                {% capture size %}
+                                {{ variant.options[index] }}
+                                {% endcapture %}
+                                {% unless sizelist contains size %}                                                 	
+                                    <span class="product_card__optoins_size_item">{{size}}</span>
+                                {% capture tempList %}
+                                    {{sizelist | append: size | append: ' '}}
+                                {% endcapture %}
+                                {% assign sizelist = tempList %}
+                                {% endunless %}
+                            {% endfor %}
+                        </div>    
+                    {% endif %}
+                {% endfor %}                     
+                {% comment %} <span class="product_card__optoins_size_badge">+ 5 more</span> {% endcomment %}
+               
+                <div class="product_card__optoins_color">
+                    {% for option in card_product.options %}
+                        {% if option == "Color" or option == "Colour" %}
+                        {% assign index = forloop.index0 %}
+                        {% assign colorlist = '' %}
+                        {% assign color = '' %}
+                        {% for variant in card_product.variants %}
+                            {% capture color %}
+                            {{ variant.options[index] }}
+                            {% endcapture %}
+                            {% unless colorlist contains color %}
+                            {% if variant.metafields.color.image != blank %}
+                                
+                                <span data-toggle="tooltip" title="{{color | lstrip}}">
+                                <img src="{{variant.metafields.color.image}}" width="50" alt="{{ card_product.title | escape }} - {{color | lstrip}}"> 
+                                {{color | lstrip}}  
+                                </span>        			
+                                
+                            {% else %}                      	
+                                <span class="product_card__optoins_color_item" style="background-color:{{color}};"><span class="visually-hidden">{{color}}</span></span>
+                            {% endif %}
+                            {% capture tempList %}
+                                {{colorlist | append: color | append: ' '}}
+                            {% endcapture %}
+                            {% assign colorlist = tempList %}
+                            {% endunless %}
+                        {% endfor %}
+                        {% endif %}
+                    {% endfor %}                    
+                </div>
+            </div>
+        {% endif %}    
+    </div>
+</div>

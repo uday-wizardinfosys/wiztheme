@@ -1,0 +1,143 @@
+{{ 'component-review-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-reviews.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+@media (min-width:992px){
+    .reviews_wrapper {
+        padding-top: 150px;
+        padding-bottom: 90px;
+    }
+}
+{% endstyle %}
+
+
+<div class="reviews_wrapper">
+    <div class="page-width">
+        <div class="reviews__title_wrapper">
+            {% if section.settings.title != blank %}
+                <h2 class="reviews_title">
+                    {{section.settings.title}}
+                </h2>
+            {% endif %}
+            {% if section.settings.btn-name != blank %}
+                <div class="reviews__btn">
+                    <a href="{{section.settings.btn-link}}" class="btn btn-arrow btn-transparent">{{section.settings.btn-name}} {% render 'icon-arrow-right' %}</a>
+                </div>
+            {% endif %}
+        </div>
+        {% if section.blocks.size != blank %}
+            <div class="grid-row">
+                {% for block in section.blocks %}
+                    <div class="grid-col-lg-4 grid-col-md-6 grid-col-12">
+                        {% render 'review-card', card_block: block %}
+                    </div>
+                {% endfor %}                
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": "t:sections.reviews.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+        "type":"text",
+        "id":"title",
+        "label":"t:sections.reviews.settings.title.label",
+        "default":"What Our Clients Says"
+    },
+    {
+        "type":"text",
+        "id":"btn-name",
+        "label":"t:sections.reviews.settings.btn-name.label",
+        "default":"View All"
+    },
+    {
+        "type":"url",
+        "id":"btn-link",
+        "label":"t:sections.reviews.settings.btn-link.label"
+    }
+  ],
+  "blocks":[
+    {
+        "type":"review",
+        "name":"t:sections.reviews.blocks.name",
+        "settings":[
+            {
+                "type":"image_picker",
+                "id":"image",
+                "label":"t:sections.reviews.blocks.settings.image.label"
+            },
+            {
+                "type":"text",
+                "id":"name",
+                "label":"t:sections.reviews.blocks.settings.name.label",
+                "default":"Loream ipsum"
+            },
+            {
+                "type":"text",
+                "id":"designation",
+                "label":"t:sections.reviews.blocks.settings.designation.label",
+                "default":"Loream"
+            },
+            {
+                "type":"richtext",
+                "id":"description",
+                "label":"t:sections.reviews.blocks.settings.description.label",
+                "default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.In rhoncus augue nibh, at ullamcorper orci ullamcorper ut.</p>"
+            },
+            {
+                "type":"select",
+                "options":[
+                    {
+                        "value":"1",
+                        "label":"t:sections.reviews.blocks.settings.rate.options__1.label"
+                    },
+                    {
+                        "value":"2",
+                        "label":"t:sections.reviews.blocks.settings.rate.options__2.label"
+                    },
+                    {
+                        "value":"3",
+                        "label":"t:sections.reviews.blocks.settings.rate.options__3.label"
+                    },
+                    {
+                        "value":"4",
+                        "label":"t:sections.reviews.blocks.settings.rate.options__4.label"
+                    },
+                    {
+                        "value":"5",
+                        "label":"t:sections.reviews.blocks.settings.rate.options__5.label"
+                    }
+                ],
+                "id":"review",
+                "label":"t:sections.reviews.blocks.settings.rate.label",
+                "default":"5"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.reviews.presets.name",
+      "blocks":[
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]      
+    }
+  ]
+}
+{% endschema %}

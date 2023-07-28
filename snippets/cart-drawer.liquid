@@ -1,0 +1,120 @@
+<div class="cart_drawer_wrapper">
+    <div class="cart_drawer">
+        <div class="cart_drawer_overlay"></div>
+        <div class="cart_drawer_inner" role="dialog" aria-modal="true" aria-label="Your cart" tabindex="-1">
+            <div class="cart_drawer_inner_empty text-center d-none">
+                <button class="cart_drawer_close" type="button" aria-label="{{ 'accessibility.close' | t }}">
+                    {% render 'icon-close' %}
+                </button>
+                <div class="cart_drawer_inner_empty_content">
+                    <h3>Your cart is empty</h3>
+                    <a href="#" class="btn btn-primary">Continue shopping</a>
+                    {%- if shop.customer_accounts_enabled and customer == null -%}
+                    <h4>Have an account?</h4>
+                    <p><a href="">Log in</a> to check out faster.</p>
+                    {%- endif -%}
+                </div>
+            </div>
+            <div class="cart_drawer_header">
+                <h3 class="cart_drawer_heading">Your cart</h3>
+                <button class="cart_drawer_close" type="button" aria-label="{{ 'accessibility.close' | t }}">
+                    {% render 'icon-close' %}
+                </button>
+            </div>
+            <!-- Drawer Header end -->
+            <cart-drawer-items>
+                <form action="/cart" id="CartDrawer-Form" class="cart_drawer_form" method="post">
+                    <div id="CartDrawer-CartItems" class="cart_drawer_content">
+                        <div class="cart_drawer_items_wrapper">
+                            <div class="cart_drawer_items_wrapper_header">
+                                <h6>PRODUCT</h6>
+                                <h6>TOTAL</h6>
+                            </div>
+                            <div class="cart_drawer_item">
+                                <div class="cart_drawer_items_row">
+                                    <div class="cart_drawer_item_img">
+                                        <img src="https://cdn.shopify.com/s/files/1/0618/9232/9644/products/Spell-LeiLeiFrillPlaydress-CreamFloral-000095720004_720x_d9544716-16c6-4d7a-b24f-3c1d89e523b2.webp?v=1671689423&width=300" alt="">
+                                    </div>
+                                    <div class="cart_drawer_item_content">
+                                        <a href="/products/crochet-mini-dress?variant=42304643170476" class="cart_drawer_item_name h6">Crochet Mini Dress</a>
+                                        <div class="product-option">Rs. 68.95</div>
+                                        <dl>
+                                            <div class="product-option">
+                                                <dt>Size: </dt>
+                                                <dd>M</dd>
+                                            </div>
+                                            <div class="product-option">
+                                                <dt>Color: </dt>
+                                                <dd>red</dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                    <div class="cart_drawer_item_price">
+                                        <span class="price">
+                                            Rs. 137.90
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="cart_drawer_item_quantity_selector">
+                                    <quantity-input class="product_quantity_selector">
+                                        <input class="product_quantity_selector_input" type="number" name="quantity" value="1" min="1" max="100">
+                                        <button class="product_quantity_btn product_quantity__decrease" data="min">{% render 'icon-angle-left' %}</button>
+                                        <button class="product_quantity_btn product_quantity__increase" data="max">{% render 'icon-angle-right' %}</button>
+                                    </quantity-input>
+                                </div>
+                            </div>
+                            <div class="cart_drawer_item">
+                                <div class="cart_drawer_items_row">
+                                    <div class="cart_drawer_item_img">
+                                        <img src="https://cdn.shopify.com/s/files/1/0618/9232/9644/products/Spell-LeiLeiFrillPlaydress-CreamFloral-000095720004_720x_d9544716-16c6-4d7a-b24f-3c1d89e523b2.webp?v=1671689423&width=300" alt="">
+                                    </div>
+                                    <div class="cart_drawer_item_content">
+                                        <a href="/products/crochet-mini-dress?variant=42304643170476" class="cart_drawer_item_name h6">Crochet Mini Dress</a>
+                                        <div class="product-option">Rs. 68.95</div>
+                                        <dl>
+                                            <div class="product-option">
+                                                <dt>Size: </dt>
+                                                <dd>M</dd>
+                                            </div>
+                                            <div class="product-option">
+                                                <dt>Color: </dt>
+                                                <dd>red</dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                    <div class="cart_drawer_item_price">
+                                        <span class="price">
+                                            Rs. 137.90
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="cart_drawer_item_quantity_selector">
+                                    <quantity-input class="product_quantity_selector">
+                                        <input class="product_quantity_selector_input" type="number" name="quantity" value="1" min="1" max="100">
+                                        <button class="product_quantity_btn product_quantity__decrease" data="min">{% render 'icon-angle-left' %}</button>
+                                        <button class="product_quantity_btn product_quantity__increase" data="max">{% render 'icon-angle-right' %}</button>
+                                    </quantity-input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </cart-drawer-items>
+            <div class="cart_drawer_footer">
+                <div class="cart_drawer_footer_top">
+                    <div class="totals" role="status">
+                        <h4 class="totals__subtotal">Subtotal</h4>
+                        <p class="totals__subtotal-value">Rs. 137.90</p>
+                    </div>
+                    <small class="tax-note caption-large rte">Taxes and shipping calculated at checkout </small>
+                </div>
+                <div class="cart_drawer_cta">
+                    <button type="submit" id="CartDrawer-Checkout" class="cart__checkout-button btn btn-primary" name="checkout" form="CartDrawer-Form">
+                        Check out
+                    </button>
+                </div>
+            </div>
+            <!-- Drawer footer end -->
+        </div>
+    </div>
+</div>

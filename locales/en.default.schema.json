@@ -1,0 +1,551 @@
+{
+  "settings_schema": {
+    "global": {
+      "settings": {
+        "header__border": {
+          "content": "Border"
+        },
+        "header__shadow": {
+          "content": "Shadow"
+        },
+        "blur": {
+          "label": "Blur"
+        },
+        "corner_radius": {
+          "label": "Corner radius"
+        },
+        "horizontal_offset": {
+          "label": "Horizontal offset"
+        },
+        "vertical_offset": {
+          "label": "Vertical offset"
+        },
+        "thickness": {
+          "label": "Thickness"
+        },
+        "opacity": {
+          "label": "Opacity"
+        },
+        "image_padding": {
+          "label": "Image padding"
+        },
+        "text_alignment": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          },
+          "label": "Text alignment"
+        }
+      }
+    },
+    "colors": {
+      "name": "Colors",
+      "settings": {
+        "header": {
+          "label": "Main"
+        },
+        "colors_primary": {
+          "label": "Primary Color",
+          "info": "Used for backgrounds."
+        },
+        "colors_dark": {
+          "label": "Dark Color",
+          "info": "Used for headings, forms and highlight text."
+        },
+        "colors_body": {
+          "label": "Text Color",
+          "info": "Used for text."
+        },
+        "button": {
+          "label": "Button"
+        },
+        "button_primary_color": {
+          "label": "Dark Color",
+          "info": "Used as foreground color on accent colors."
+        },
+        "button_primary_background_color": {
+          "label": "Primary Color",
+          "info": "Used for solid button background."
+        },
+        "button_secondary_color": {
+          "label": "Dark Color",
+          "info": "Used for button border and foreground, when button background is transparent."
+        }
+      }
+    },
+    "typography": {
+      "name": "Typography",
+      "settings": {
+        "header__1": {
+          "content": "Headings"
+        },
+        "type_header_font": {
+          "label": "Font",
+          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+        },
+        "heading_font_line_height": {
+          "label": "Line height"
+        },
+        "heading_font_letter_spacing": {
+          "label": "Letter spacing"
+        },
+        "header__2": {
+          "label": "Font size"
+        },
+        "heading_h1": {
+          "label": "Heading H1"
+        },
+        "heading_h2": {
+          "label": "Heading H2"
+        },
+        "heading_h3": {
+          "label": "Heading H3"
+        },
+        "heading_h4": {
+          "label": "Heading H4"
+        },
+        "heading_h5": {
+          "label": "Heading H5"
+        },
+        "heading_h6": {
+          "label": "Heading H6"
+        },
+        "header__3": {
+          "label": "body"
+        },
+        "body_font_family": {
+          "label": "Font",
+          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+        },
+        "body_font_size": {
+          "label": "Font size"
+        },
+        "body_font_line_height": {
+          "label": "Line height"
+        },
+        "body_font_letter_spacing": {
+          "label": "Letter spacing"
+        },
+        "header__4": {
+          "content": "Buttons"
+        },
+        "button_font_family": {
+          "label": "Font",
+          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+        },
+        "button_font_size": {
+          "label": "Font size"
+        },
+        "button_font_line_height": {
+          "label": "Line height"
+        },
+        "button_font_letter_spacing": {
+          "label": "Letter spacing"
+        },
+        "header__5": {
+          "content": "Navigation"
+        },
+        "navigation_font_family": {
+          "label": "Font",
+          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+        }
+      }
+    },
+    "buttons": {
+      "name": "Button"
+    },
+    "social-media": {
+      "name": "Social media",
+      "settings": {
+        "header": {
+          "content": "Social accounts"
+        },
+        "social_twitter_link": {
+          "label": "Twitter",
+          "info": "https:\/\/twitter.com\/shopify"
+        },
+        "social_facebook_link": {
+          "label": "Facebook",
+          "info": "https:\/\/facebook.com\/shopify"
+        },
+        "social_pinterest_link": {
+          "label": "Pinterest",
+          "info": "https:\/\/pinterest.com\/shopify"
+        },
+        "social_instagram_link": {
+          "label": "Instagram",
+          "info": "http:\/\/instagram.com\/shopify"
+        },
+        "social_tiktok_link": {
+          "label": "TikTok",
+          "info": "https:\/\/tiktok.com\/@shopify"
+        },
+        "social_youtube_link": {
+          "label": "YouTube",
+          "info": "https:\/\/www.youtube.com\/shopify"
+        },
+        "social_linkdin_link": {
+          "label": "linkdin",
+          "info": "https:\/\/linkdin.com\/shopify"
+        },
+        "social_dribble_link": {
+          "label": "dribble",
+          "info": "https:\/\/dribble.com\/shopify"
+        }
+      }
+    },
+    "favicon": {
+      "name": "Favicon",
+      "settings": {
+        "favicon": {
+          "label": "Favicon image",
+          "info": "Will be scaled down to 32 x 32px"
+        }
+      }
+    }
+  },
+  "sections": {
+    "all": {
+      "padding": {
+        "section_padding_heading": "Section padding",
+        "padding_top": "Top padding",
+        "padding_bottom": "Bottom padding"
+      }
+    },
+    "announcement-bar": {
+      "name": "Announcement bar",
+      "settings": {
+        "text": {
+          "label": "Text"
+        },
+        "text_alignment": {
+          "label": "Text alignment",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          }
+        },
+        "bg_color": {
+          "label": "Background color"
+        },
+        "text_color": {
+          "label": "Text color"
+        }
+      }
+    },
+    "header": {
+      "name": "Header",
+      "settings": {
+        "logo": {
+          "label": "Logo image"
+        },
+        "logo_width": {
+          "label": "logo width"
+        },
+        "nav": {
+          "label": "Menu"
+        },
+        "sticky_header": {
+          "label": "Enable sticky header",
+          "info": "Header shows on the screen as customers scroll down."
+        }
+      }
+    },
+    "image-banner": {
+      "name": "Image banner",
+      "settings": {
+        "image": {
+          "label": "image"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "sub-title": {
+          "label": "Sub Title"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "btn-name": {
+          "label": "Button Name"
+        },
+        "btn-link": {
+          "label": "Button Link"
+        },
+        "position": {
+          "label": "Select position",
+          "options__1": {
+            "label": "Top"
+          },
+          "options__2": {
+            "label": "Middle"
+          },
+          "options__3": {
+            "label": "Bottom"
+          }
+        },
+        "text-align": {
+          "label": "Select text align",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          }
+        }
+      },
+      "presets": {
+        "name": "Image banner"
+      }
+    },
+    "image-width-text-vertical": {
+      "name": "Image with text vertical",
+      "blocks": {
+        "name": "Image Style",
+        "settings": {
+          "image": {
+            "label": "Image"
+          },
+          "image-icon": {
+            "label": "Image Icon"
+          },
+          "title": {
+            "label": "Title"
+          },
+          "sub-title": {
+            "label": "Sub title"
+          },
+          "btn-name": {
+            "label": "Button Name"
+          },
+          "btn-link": {
+            "label": "Button Link"
+          }
+        }
+      }
+    },
+    "image-with-text": {
+      "name": "Image with text",
+      "settings": {
+        "column-reverse": {
+          "label": "Enable Reverse Column"
+        },
+        "position": {
+          "label": "Select position",
+          "options__1": {
+            "label": "Top"
+          },
+          "options__2": {
+            "label": "Middle"
+          },
+          "options__3": {
+            "label": "Bottom"
+          }
+        },
+        "image": {
+          "label": "Image"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "btn-name": {
+          "label": "Button Name"
+        },
+        "btn-link": {
+          "label": "Button Link"
+        }
+      },
+      "presets": {
+        "name": "Image with text"
+      }
+    },
+    "image-block": {
+      "name": "Image block",
+      "blocks": {
+        "name": "Blocks",
+        "settings": {
+          "image": {
+            "label": "Image"
+          },
+          "title": {
+            "label": "Title"
+          },
+          "description": {
+            "label": "Description"
+          }
+        }
+      },
+      "presets": {
+        "name": "Image block"
+      }
+    },
+    "featured-collection": {
+      "name": "Featured collection",
+      "settings": {
+        "title": {
+          "label": "Title"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "btn-title": {
+          "label": "Button Title"
+        },
+        "btn-link": {
+          "label": "Button Link"
+        }
+      },
+      "blocks": {
+        "name": "Collection",
+        "label": "Select Collection"
+      },
+      "presets": {
+        "name": "Featured collection"
+      }
+    },
+    "brand": {
+      "name": "Brands",
+      "settings": {
+        "title": {
+          "label": "Title"
+        }
+      },
+      "blocks": {
+        "name": "Brands",
+        "settings": {
+          "image": {
+            "label": "Image"
+          }
+        }
+      },
+      "presets": {
+        "name": "Brands"
+      }
+    },
+    "reviews": {
+      "name": "Reviews slider",
+      "settings": {
+        "title": {
+          "label": "Title"
+        },
+        "btn-name": {
+          "label": "Button name"
+        },
+        "btn-link": {
+          "label": "Button Link"
+        }
+      },
+      "blocks": {
+        "name": "Review",
+        "settings": {
+          "image": {
+            "label": "Image"
+          },
+          "name": {
+            "label": "Name"
+          },
+          "designation": {
+            "label": "Designation"
+          },
+          "description": {
+            "label": "Description"
+          },
+          "rate": {
+            "label": "Select Review",
+            "options__1": {
+              "label": "1"
+            },
+            "options__2": {
+              "label": "2"
+            },
+            "options__3": {
+              "label": "3"
+            },
+            "options__4": {
+              "label": "4"
+            },
+            "options__5": {
+              "label": "5"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Reviews slider"
+      }
+    },
+    "featured-blog": {
+      "name": "Featured blogs",
+      "settings": {
+        "title": {
+          "label": "Title"
+        },
+        "btn-name": {
+          "label": "Button Name"
+        },
+        "btn-link": {
+          "label": "Button Link"
+        }
+      },
+      "presets": {
+        "name": "Featured blogs"
+      }
+    },
+    "footer": {
+      "name": "Footer",
+      "settings": {
+        "currency": {
+          "label": "Enable Currency Drop Down"
+        },
+        "social": {
+          "label": "Enable Social Meida"
+        }
+      },
+      "blocks": {
+        "name": "Menu",
+        "settings": {
+          "menu_item": {
+            "label": "Select Menu"
+          },
+          "title": {
+            "label": "Title"
+          }
+        },
+        "name_2": "News Latter",
+        "settings_2": {
+          "title": {
+            "label": "title"
+          },
+          "description": {
+            "label": "Description"
+          }
+        }
+      }
+    },
+    "main-register": {
+      "name": "Registration"
+    },
+    "main-login": {
+      "name": "Login"
+    },
+    "main-reset-password": {
+      "name": "Password reset"
+    }
+  }
+}

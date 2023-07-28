@@ -1,0 +1,124 @@
+{{ 'section-image-with-text-vertical.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+@media (min-width:992px) {
+    .image_with_text_vertical_wrapper {
+        padding-top: 100px;
+        padding-bottom:100px;
+    }
+}
+{% endstyle %}
+
+{% if section.blocks.size != blank %}
+<div class="image_with_text_vertical_wrapper">
+    <div class="page-width">
+        <div class="grid-row">
+            {% for block in section.blocks %}
+                <div class="grid-col-lg-6 grid-col-12">
+                    <div class="image_with_text_vertical_container {% cycle 'flex-lg-column-reverse flex-column', 'flex-column' %}">
+                        <div class="image_with_text_vertical--img">
+                            {% if block.settings.image-icon != blank %}
+                                <div class="image_with_text_vertical--circletext">
+                                    {%-liquid assign image_height = block.settings.image-icon.width | divided_by: block.settings.image-icon.aspect_ratio -%}
+                                    {{ block.settings.image-icon | image_url: width: 1500 | image_tag:
+                                    loading: 'lazy',
+                                    width: block.settings.image-icon.width,
+                                    height: image_height,
+                                    widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                                    alt: block.settings.image-icon.alt | escape
+                                    }}
+                                </div>
+                            {% endif %}
+                            {% if block.settings.image != blank %}
+                                {%-liquid assign image_height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio -%}
+                                {{ block.settings.image | image_url: width: 1500 | image_tag:
+                                    loading: 'lazy',
+                                    width: block.settings.image.width,                                    
+                                    widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                                    alt: block.settings.image.alt | escape
+                                }}                                
+                            {% else %}
+                                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}    
+                            {% endif %}
+                        </div>
+                        <div class="image_with_text_vertical--content">
+                            {% if block.settings.title != blank or block.settings.sub-title != blank %}
+                                <h2>{{block.settings.title}}<br/> {{block.settings.sub-title}}</h2>
+                            {% endif %}
+                            {% if block.settings.btn-name != blank %}
+                                <div class="btn_wrap">
+                                    <a href="{{block.settings.btn-link}}" class="btn btn-primary btn-arrow">{{block.settings.btn-name}} {% render 'icon-arrow-right' %}</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}            
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "t:sections.image-width-text-vertical.name",
+  "tag": "section",
+  "class": "section-image-with-text-vertical",
+  "max_blocks":2,
+  "blocks": [
+    {
+        "type":"image",
+        "name":"t:sections.image-width-text-vertical.blocks.name",
+        "settings":[            
+            {
+                "type":"image_picker",
+                "id":"image",
+                "label":"t:sections.image-width-text-vertical.blocks.settings.image.label"
+            },
+            {
+                "type":"image_picker",
+                "id":"image-icon",
+                "label":"t:sections.image-width-text-vertical.blocks.settings.image-icon.label"
+            },
+            {
+                "type":"text",
+                "id":"title",
+                "label":"t:sections.image-width-text-vertical.blocks.settings.title.label",
+                "default":"Lorem ipsum"
+            },
+            {
+                "type":"text",
+                "id":"sub-title",
+                "label":"t:sections.image-width-text-vertical.blocks.settings.sub-title.label"
+            },
+            {
+                "type":"text",
+                "id":"btn-name",
+                "label":"t:sections.image-width-text-vertical.blocks.settings.btn-name.label",
+                "default":"Learn More"
+            },
+            {
+                "type":"url",
+                "id":"btn-link",
+                "label":"t:sections.image-width-text-vertical.blocks.settings.btn-link.label"
+            }
+        ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Image with text vertical",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

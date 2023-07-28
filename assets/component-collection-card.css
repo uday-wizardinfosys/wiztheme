@@ -1,0 +1,14 @@
+.collection_card__image {
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+.collection_card__image img {
+    width: 100%;
+    transition: var(--base-transition);
+}
+.collection_card__title {
+    margin-bottom: 3px;
+}
+.collection_card:hover .collection_card__image img {
+    transform: scale(1.05);
+}

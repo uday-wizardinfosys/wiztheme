@@ -1,0 +1,63 @@
+{% style %}
+
+  .annoucement-bar-wrapper {
+    background-color: {{ section.settings.annoucement-bar-bg-color }};
+    color: {{ section.settings.annoucement-bar-text-color }};
+  }
+{% endstyle %}
+
+{% if section.settings.annoucement-bar-text != blank %}
+<div class="annoucement-bar-wrapper">
+  <div class="page-width">
+    <div class="annoucement-bar-content {{ section.settings.annoucement-bar-alignment }}">
+      <p>{{ section.settings.annoucement-bar-text }}</p>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "t:sections.announcement-bar.name",
+    "settings": [
+      {
+        "type": "text",
+        "id": "annoucement-bar-text",
+        "label": "t:sections.announcement-bar.settings.text.label",
+        "default": "Welcome to store"
+      },      
+      {
+        "type": "select",
+        "id": "annoucement-bar-alignment",
+        "label": "t:sections.announcement-bar.settings.text_alignment.label",
+        "options": [
+          {            
+            "value": "text-left",
+            "label": "t:sections.announcement-bar.settings.text_alignment.options__1.label"
+          },
+          {            
+            "value": "text-center",
+            "label": "t:sections.announcement-bar.settings.text_alignment.options__2.label"
+          },
+          {            
+            "value": "text-right",
+            "label": "t:sections.announcement-bar.settings.text_alignment.options__3.label"
+          }
+        ],
+        "default": "text-center"
+      },
+      {
+        "type": "color",
+        "id": "annoucement-bar-bg-color",
+        "label": "t:sections.announcement-bar.settings.bg_color.label",
+        "default": "#FFD7D7"
+      }, 
+      {
+        "type": "color",
+        "id": "annoucement-bar-text-color",
+        "label": "t:sections.announcement-bar.settings.text_color.label",
+        "default": "#232323"
+      }
+    ]
+  }
+{% endschema %}

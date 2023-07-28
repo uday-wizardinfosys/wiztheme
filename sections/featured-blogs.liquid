@@ -1,0 +1,81 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-featured-blogs.css' | asset_url | stylesheet_tag }}
+
+
+<div class="featured_blog_wrapper">
+    <div class="page-width">
+        <div class="featured_blog_title_wrapper">
+            {% if section.settings.title != blank %}
+                <h2 class="featured_blog_title">
+                    {{ section.settings.title }}
+                </h2>
+            {% endif %}
+            {% if section.settings.btn-name != blank %}
+                <div class="featured_blog_btn">
+                    <a href="{{ section.settings.btn-link }}" class="btn btn-arrow btn-transparent">{{ section.settings.btn-name }} {% render 'icon-arrow-right' %}</a>
+                </div>
+            {% endif %}
+        </div>
+        <div class="grid-row">
+            {% if blog.articles.size != blank %}
+                {% for article in blog.articles limit:3 %}
+                    <div class="grid-col-lg-4 grid-col-md-6 grid-col-12">
+                        {% render 'article-card' %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                {% for i in (0..2) %}
+                    <div class="grid-col-lg-4 grid-col-md-6 grid-col-12">
+                        <div class="article_card">
+                            <div class="article_card__image">                        
+                                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                            </div>
+                            <div class="article_card__content">
+                                <div class="article_card__info">{{ "now" | date: "%b %d, %Y" }} -  by Helen Smith</div>
+                                <h3 class="article_card__heading h4">
+                                    <a href="#" class="text-reset d-block">
+                                        Sustainable Clothing Brands                                
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>   
+                {% endfor %}             
+            {% endif %}    
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.featured-blog.name",
+  "tag": "section",
+  "class": "section-featured-blogs",
+  "settings": [
+    {
+        "type":"text",
+        "id":"title",
+        "label":"t:sections.featured-blog.settings.title.label",
+        "default":"From the Blog"
+    },
+    {
+        "type":"text",
+        "id":"btn-name",
+        "label":"t:sections.featured-blog.settings.btn-name.label",
+        "default":"View All"
+    },
+    {
+        "type":"url",
+        "id":"btn-link",
+        "label":"t:sections.featured-blog.settings.btn-link.label"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "t:sections.featured-blog.presets.name"
+    }
+  ]
+}
+{% endschema %}
+

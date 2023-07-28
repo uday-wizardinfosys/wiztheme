@@ -1,0 +1,25 @@
+.featured_blog_wrapper {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.article_card__content {
+    padding: 29px 16px;
+}
+@media (min-width:992px){
+    .featured_blog_title_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 10px;
+        margin-bottom: 40px;
+    }
+    .featured_blog_title {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width:991px) {
+    .featured_blog_title_wrapper {
+        margin-bottom: 30px;
+    }
+}

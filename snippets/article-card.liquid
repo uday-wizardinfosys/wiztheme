@@ -1,0 +1,22 @@
+<div class="article_card">
+    <div class="article_card__image">
+      {% if article.image.src != blank %}         
+          {{ article.image | image_url: width: 1500 | image_tag:
+                loading: 'lazy',
+                width: article.image.width,                
+                widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                alt: article.image.alt | escape
+            }}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}             
+    </div>
+    <div class="article_card__content">
+        <div class="article_card__info">{{ article.published_at | date: "%b %d, %Y" }}  -  by {{ article.author }}</div>
+        <h3 class="article_card__heading h4">
+            <a href="{{ article.url }}" class="text-reset d-block">               
+              {{ article.title | escape | truncate: 50 }}
+            </a>
+        </h3>
+    </div>
+</div>

@@ -1,0 +1,244 @@
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+<footer class="bg-primary">
+    <div class="page-width">
+        <div class="footer_top">
+            <div class="grid-row">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'menu' %}
+                    <div class="grid-col">
+                        <div class="footer-block">
+                           {% if block.settings.title != blank %}
+                                <div class="footer_title_wrap">
+                                    <h6 class="footer_title">{{ block.settings.title }}</h6>
+                                </div>
+                            {% endif %}
+                            <ul class="list-unstyled">
+                                {%- for link in block.settings.menu_item.links -%}
+                                    <li>
+                                        <a href="{{ link.url }}" class="footer_link">{{ link.title | escape }}</a>
+                                    </li>
+                                {% endfor %}                                    
+                            </ul>
+                        </div>
+                    </div>
+                    {% when 'newslatter' %}
+                    <div class="grid-col-lg-6 grid-col-12">
+                        <div class="footer_newslatter_wrap">
+                            {% if block.settings.title != blank %}
+                                <h2 class="footer_newslatter_title">{{ block.settings.title }}</h2>
+                            {% endif %}
+                            {{ block.settings.description }}
+                            {% form 'customer',class:'newslatter_form' %}
+                                {{ form.errors | default_errors }}
+                                {% if form.posted_successfully? %}
+                                <p>{{ 'general.newsletter_form.confirmation' | t }}</p>
+                                {% endif %}
+                                <label class="visually-hidden" for="newslatter-email">Email <span aria-hidden="true">*</span></label>
+                                <input autocomplete="email" type="email" id="newslatter-email" name="contact[email]" class="form-control" spellcheck="false" autocapitalize="off" aria-required="true" placeholder="Email*" required>
+                                <button type="submit" class="btn btn-dark btn-arrow">
+                                    Join us {% render 'icon-arrow-right' %}
+                                </button>
+
+                            {% endform %}
+                        </div>
+                    </div>
+                {% endcase %}
+            {% endfor %}                    
+            </div>
+        </div>   
+        {% if section.settings.currency or section.settings.social %}     
+            <div class="footer_middle align-items-start">
+                {% if section.settings.currency and localization.available_countries.size > 1 %}
+                    <div class="country_selector_wrap footer_country_selector">                       
+                        <localization-form>
+                            {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
+                            <div class="no-js-hidden">                                
+                                <div class="disclosure">
+                                    <button type="button" class="disclosure__button localization-form__select localization-selector link link--text caption-large" aria-expanded="false" aria-controls="FooterCountryList" aria-describedby="FooterCountryLabel">
+                                        {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
+                                    </button>
+                                    <div class="disclosure__list-wrapper" hidden>
+                                        <ul id="FooterCountryList" role="list" class="disclosure__list list-unstyled bg-primary">
+                                        {%- for country in localization.available_countries -%}
+                                            <li class="disclosure__item" tabindex="-1">
+                                                <a class="link link--text disclosure__link caption-large{% if country.iso_code == localization.country.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
+                                                    {{ country.name }} <span class="localization-form__currency">({{ country.currency.iso_code }} {{ country.currency.symbol }})</span>
+                                                </a>
+                                            </li>
+                                        {%- endfor -%}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+                            </div>
+                            {%- endform -%}
+                        </localization-form>
+                    </div>
+                {% endif %}
+                {% if section.settings.social %}
+                    <div class="social_wrapper text-dark">
+                        <ul class="list-unstyled d-flex align-items-center">
+                            {% if settings.social_facebook_link != blank %}
+                                <li>
+                                    <a href="{{ settings.social_facebook_link }}" target="blank">{% render 'icon-facebook' %}</a>
+                                </li>
+                            {% endif %}
+                            {% if settings.social_instagram_link != blank %}
+                                <li>
+                                    <a href="{{ settings.social_instagram_link }}" target="blank">{% render 'icon-instagram' %}</a>
+                                </li>
+                            {% endif %}
+                            {% if settings.social_youtube_link != blank %}
+                                <li>
+                                    <a href="{{ settings.social_youtube_link }}" target="blank">{% render 'icon-youtube' %}</a>
+                                </li>
+                            {% endif %}
+                            {% if settings.social_twitter_link != blank %}
+                                <li>
+                                    <a href="{{ settings.social_twitter_link }}" target="blank">{% render 'icon-twitter' %}</a>
+                                </li>
+                            {% endif %}
+                            {% if settings.social_pinterest_link != blank%}
+                                <li>
+                                    <a href="{{ settings.social_pinterest_link }}" target="blank">{% render 'icon-pintrest' %}</a>
+                                </li>
+                            {% endif %}
+                            {% if settings.social_linkdin_link != blank %}
+                                <li>
+                                    <a href="{{ settings.social_linkdin_link }}" target="blank">{% render 'icon-linkdin' %}</a>
+                                </li>
+                            {% endif %}
+                            {% if settings.social_tiktok_link != blank %}
+                                <li>
+                                    <a href="{{ settings.social_tiktok_link }}" target="blank">{% render 'icon-tik-tok' %}</a>
+                                </li>
+                            {% endif %}
+                            {% if settings.social_dribble_link != blank %}
+                                <li>
+                                    <a href="{{ settings.social_dribble_link }}" target="blank">{% render 'icon-dribble' %}</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                {% endif %}    
+            </div>        
+        {% endif %}
+            <div class="footer_bottom d-flex justify-content-between">
+                <div class="copyright_text">
+                    <p>&copy; {{ 'now' | date: "%Y" }}, {{ shop.name }} {{ powered_by_link }}</p>
+                </div>
+                <div class="footer__payment">                    
+                    <ul class="list list-payment list-unstyled d-flex" role="list">
+                    {%- for type in shop.enabled_payment_types -%}
+                        <li class="list-payment__item">
+                            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                        </li>
+                    {%- endfor -%}
+                    </ul>
+                </div>
+            </div>        
+    </div>
+</footer>
+{% javascript %}
+  class LocalizationForm extends HTMLElement {
+    constructor() {
+      super();
+      this.elements = {
+        input: this.querySelector('input[name="locale_code"], input[name="country_code"]'),
+        button: this.querySelector('button'),
+        panel: this.querySelector('.disclosure__list-wrapper'),
+      };
+      this.elements.button.addEventListener('click', this.openSelector.bind(this));
+      this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
+      this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
+
+      this.querySelectorAll('a').forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
+    }
+
+    hidePanel() {
+      this.elements.button.setAttribute('aria-expanded', 'false');
+      this.elements.panel.setAttribute('hidden', true);
+    }
+
+    onContainerKeyUp(event) {
+      if (event.code.toUpperCase() !== 'ESCAPE') return;
+
+      this.hidePanel();
+      this.elements.button.focus();
+    }
+
+    onItemClick(event) {
+      event.preventDefault();
+      const form = this.querySelector('form');
+      this.elements.input.value = event.currentTarget.dataset.value;
+      if (form) form.submit();
+    }
+
+    openSelector() {
+      this.elements.button.focus();
+      this.elements.panel.toggleAttribute('hidden');
+      this.elements.button.setAttribute('aria-expanded', (this.elements.button.getAttribute('aria-expanded') === 'false').toString());
+    }
+
+    closeSelector(event) {
+      const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
+      if (event.relatedTarget === null || shouldClose) {
+        this.hidePanel();
+      }
+    }
+  }
+  customElements.define('localization-form', LocalizationForm);
+{% endjavascript %}
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "class": "section-footer",
+  "settings": [
+    {
+        "type":"checkbox",
+        "id":"currency",
+        "label":"t:sections.footer.settings.currency.label"
+    },
+    {
+        "type":"checkbox",
+        "id":"social",
+        "label":"t:sections.footer.settings.social.label"
+    }
+  ],
+  "blocks":[
+    {
+        "type":"menu",
+        "name":"t:sections.footer.blocks.name",
+        "settings":[
+            {
+                "type":"link_list",
+                "id":"menu_item",
+                "label":"t:sections.footer.blocks.settings.menu_item.label"
+            },
+            {
+                "type":"text",
+                "id":"title",
+                "label":"t:sections.footer.blocks.settings.title.label"
+            }
+        ]
+    },
+    {
+        "type":"newslatter",
+        "name":"t:sections.footer.blocks.name_2",
+        "settings":[
+            {
+                "type":"text",
+                "id":"title",
+                "label":"t:sections.footer.blocks.settings_2.title.label"
+            },
+            {
+                "type":"richtext",
+                "id":"description",
+                "label":"t:sections.footer.blocks.settings_2.description.label"
+            }
+        ]
+    }
+  ]
+}
+{% endschema %}  

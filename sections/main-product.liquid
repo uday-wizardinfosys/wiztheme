@@ -1,0 +1,279 @@
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+
+{% style %}
+#{{ section.id }} .product_details_inner  {
+  padding-top:80px;
+  padding-bottom:80px;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+{% endstyle %}
+<div class="product_page">
+  <div class="product_page_wrapper">
+    <div class="page-width">
+      <div class="grid-row">
+        <div class="grid-col-xl-7 grid-col-lg-6 grid-col-12">
+          <div class="product_slider_wrap">
+            <div class="product_thumb_slider slideshow">
+              <div class="slide slideshow_slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-1888_1000x1000_dff88042-02ef-4b6c-9205-1e7eda0484e0.webp"
+                  alt=""
+                >
+              </div>
+              <div class="slide slideshow_slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-dec22-239_1000x1000_ebe3cae4-b831-4337-b738-c0dea68fa482.webp"
+                  alt=""
+                >
+              </div>
+              <div class="slide slideshow_slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-1867_1000x1000_8f7d9f4b-8fd4-4b0c-99de-23b421ee88da.webp"
+                  alt=""
+                >
+              </div>
+              <div class="slide slideshow_slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-1880_1000x1000_dde86d30-809a-4394-a9b8-6e5b34804d71.webp"
+                  alt=""
+                >
+              </div>
+              <div class="slide slideshow_slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-2124_1000x1000_f94d29d9-b9dd-426a-a4a1-04a2405377c6.webp"
+                  alt=""
+                >
+              </div>
+              <div class="slide slideshow_slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-dec22-235_1000x1000_b83d1e1e-9006-4f97-b27e-c603ada521b4.webp"
+                  alt=""
+                >
+              </div>
+              <div class="slide slideshow_slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-1885_1000x1000_7d7e4cee-2614-40b3-9b4c-3d6a1da8161d.webp"
+                  alt=""
+                >
+              </div>
+              <div class="slide slideshow_slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-2120_1000x1000_8691c05b-4da0-4868-8d17-a0317c31cb6f.webp"
+                  alt=""
+                >
+              </div>
+            </div>
+            <div class="product_preview_slider  slideshow">
+              <div class="slide slideshow_slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-1888_1000x1000_dff88042-02ef-4b6c-9205-1e7eda0484e0.webp"
+                  alt=""
+                >
+              </div>
+              {% comment %}
+                <div class="slide slideshow_slide">
+                    <img src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-dec22-239_1000x1000_ebe3cae4-b831-4337-b738-c0dea68fa482.webp" alt="">
+                </div>
+                <div class="slide slideshow_slide">
+                    <img src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-1867_1000x1000_8f7d9f4b-8fd4-4b0c-99de-23b421ee88da.webp" alt="">
+                </div>
+                <div class="slide slideshow_slide">
+                    <img src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-1880_1000x1000_dde86d30-809a-4394-a9b8-6e5b34804d71.webp" alt="">
+                </div>
+                <div class="slide slideshow_slide">
+                    <img src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-2124_1000x1000_f94d29d9-b9dd-426a-a4a1-04a2405377c6.webp" alt="">
+                </div>
+                <div class="slide slideshow_slide">
+                    <img src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-dec22-235_1000x1000_b83d1e1e-9006-4f97-b27e-c603ada521b4.webp" alt="">
+                </div>
+                <div class="slide slideshow_slide">
+                    <img src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-1885_1000x1000_7d7e4cee-2614-40b3-9b4c-3d6a1da8161d.webp" alt="">
+                </div>
+                <div class="slide slideshow_slide">
+                    <img src="https://cdn.shopify.com/s/files/1/0618/9232/9644/files/Spell-KyeomaKooMaxiRobe-BrownOchre-2120_1000x1000_8691c05b-4da0-4868-8d17-a0317c31cb6f.webp" alt="">
+                </div>
+              {% endcomment %}
+            </div>
+          </div>
+        </div>
+        <div class="grid-col-xl-5 grid-col-lg-6 grid-col-12">
+          <div class="product_content_wrap">
+            <div class="product_content">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'vendor' %}
+                    <h6 class="product_vendor body-font fw-light text-uppercase small">{{ product.vendor }}</h6>
+                  {% when 'title' %}
+                    <h1 class="product_title">{{ product.title }}</h1>
+                  {% when 'price' %}
+                    <div class="product_price">
+                      {% render 'product-price',product:product %}                    
+                    </div>
+                  {% when 'description' %}
+                    <div class="product_description">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci.</p>
+                    </div>
+                  {% when 'variation' %}
+                    <variant-picker>                  
+                      {%- for option in product.options_with_values -%}
+                        <div class="product-form__input product-form__input--dropdown product_size_selector_wrap">                        
+                          <div class="product_size_selector_title">{{ option.name }}:</div>
+                          {%- if option.name == 'color' or option.name == 'Color' -%}
+                            <div class="product_color_selector">
+                              {%- for value in option.values -%}
+                                <div class="product_color_selector_radio">
+                                  <input id="{{ value | handle }}-{{ option.name | handle }}-{{ forloop.index0 }}" {% if option.selected_value == value %} checked {% endif %} type="radio" name="{{ option.name }}" value="{{ value | escape }}">
+                                  <label
+                                    for="{{ value | handle }}-{{ option.name | handle }}-{{ forloop.index0 }}"
+                                    class="product_color_selector_label"
+                                    style="background:{{ value | escape }};"
+                                  ></label>
+                                </div>
+                              {%- endfor -%}  
+                            </div>  
+                          {%- else -%}
+                            <div class="product_size_selector">
+                              {%- for value in option.values -%}
+                                <div class="product_size_selector_radio">
+                                  <input id="{{ value | handle }}-{{ option.name | handle }}-{{ forloop.index0 }}" {% if option.selected_value == value %} checked {% endif %} type="radio" name="{{ option.name }}" value="{{ value | escape }}">
+                                  <label for="{{ value | handle }}-{{ option.name | handle }}-{{ forloop.index0 }}" class="product_size_selector_label">{{ value | escape }}</label>
+                                </div>
+                              {%- endfor -%}                            
+                            </div>
+                          {%- endif -%}                          
+                        </div>
+                      {%- endfor -%}
+
+                      <script type="application/json">
+                        {{ product.variants | json }}
+                      </script>
+                    
+                      <!-- Variant selector -->
+                      <select name="variant-value-id" class="d-none">
+                        {%- for variant in product.variants -%}                      
+                          <option value="{{ variant.id }}"
+                            data-name="{{ variant.title | remove : ' ' }}"
+                            {% if variant == current_variant %}selected="selected"{% endif %}>
+                            {{ variant.title }} - {{ variant.price | money }}
+                          </option>
+                        {%- endfor -%}
+                      </select>
+                    </variant-picker>
+                  {% when 'addtocart' %}  
+
+                    <div class="product_btns_wrap">
+                      {%- if block.settings.qty != blank -%}
+                        <quantity-input class="product_quantity_selector">
+                          <input class="product_quantity_selector_input" type="number" name="quantity" value="1" min="1" max="100">
+                          <button class="product_quantity_btn product_quantity__decrease" data="min">{% render 'icon-angle-left' %}</button>
+                          <button class="product_quantity_btn product_quantity__increase" data="max">{% render 'icon-angle-right' %}</button>
+                        </quantity-input>
+                      {%- endif -%}
+                      <button class="btn btn-arrow btn-transparent btn-add-to-cart" data-id="{{ product.variants.first.id }}">
+                        ADD TO CART {% render 'icon-arrow-right' %}
+                      </button>
+                      {% if block.settings.buy != blank %}
+                        <button class="btn btn-arrow btn-dark btn-checkout">BUY IT NOW {% render 'icon-arrow-right' %}</button>
+                      {% endif %}
+                    </div>
+                {% endcase %}    
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="{{ section.id }}" class="product_details_wrapper">
+    <div class="page-width">
+      <div class="product_details_inner bg-white">
+          <h3 class="product_details_title">Let's get into the details.</h3>
+        <div class="accordion">
+          <div class="accordion_item">
+              <a href="#" class="accordion_button">
+                  <p>How does your AI-driven approach enhance the effectiveness of my marketing strategy?</p>
+                  <i class="arrow_icon"></i>
+              </a>
+              <div class="accordion_content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget mauris eros. Pellentesque vestibulum, ex a aliquet pharetra, ligula justo iaculis ex, ac commodo elit metus elementum enim. Nullam eget lacus tellus. Vestibulum hendrerit luctus faucibus.</p>
+              </div>
+          </div>
+          <div class="accordion_item">
+              <a href="#" class="accordion_button">
+                  <p>Can your services be tailored to my specific industry and target audience?</p>
+                  <i class="arrow_icon"></i>
+              </a>
+              <div class="accordion_content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget mauris eros. Pellentesque vestibulum, ex a aliquet pharetra, ligula justo iaculis ex, ac commodo elit metus elementum enim. Nullam eget lacus tellus. Vestibulum hendrerit luctus faucibus.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Main product",
+    "settings": [
+      
+    ],
+    "blocks":[
+      {
+        "type":"vendor",
+        "name":"Vendor Name",
+        "limit":1,
+        "settings":[]
+      },
+      {
+        "type":"title",
+        "name":"Title",
+        "limit":1,
+        "settings":[]
+      },
+      {
+        "type":"price",
+        "name":"Price",
+        "limit":1,
+        "settings":[]
+      },
+      {
+        "type":"description",
+        "name":"Description",
+        "limit":1,
+        "settings":[]
+      },
+      {
+        "type":"variation",
+        "name":"Variation",
+        "limit":1,
+        "settings":[]
+      },
+      {
+        "type":"addtocart",
+        "name":"Add To Cart",
+        "limit":1,
+        "settings":[
+          {
+            "type":"checkbox",
+            "id":"qty",
+            "label":"Quantity Enable",
+            "default":true
+          },
+          {
+            "type":"checkbox",
+            "id":"buy",
+            "label":"Buy Button Enable",
+            "default":true
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
