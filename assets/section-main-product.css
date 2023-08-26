@@ -1,5 +1,5 @@
 .product_page {
-    padding: 150px 0 80px;
+    padding: 20px 0 80px;
 }
 .product_page_wrapper {
     padding: 0 0 90px;
@@ -183,6 +183,7 @@
     font-style: normal;
     font-weight: 500;
     color: #ffffff;
+    margin-bottom: 0;
 }
 .accordion .accordion_button .arrow_icon {
     position: absolute;

@@ -2,20 +2,20 @@
 
 
 {% style %}
-.{{ section.id }}-section--padding {
+.section-{{ section.id }}--padding {
     padding-top: {{ section.settings.paddingtop | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.paddingbottom | times: 0.75 | round: 0 }}px;
 }
 
 @media (min-width:992px) {
-    .{{ section.id }}-section--padding {
+    .section-{{ section.id }}--padding {
         padding-top: {{ section.settings.paddingtop }}px;
         padding-bottom: {{ section.settings.paddingbottom }}px;
     }
 }
 {% endstyle %}
 
-<div id="{{ section.id }}" class="image_with_text_wrapper {{ section.settings.bg-color }} {{ section.id }}-section--padding">
+<div id="{{ section.id }}" class="image_with_text_wrapper {{ section.settings.bg-color }} section-{{ section.id }}--padding">
     <div class="page-width">
         <div class="grid-row justify-content-between  {{ section.settings.position }} {% if section.settings.column-reverse %}flex-row-reverse{% endif %}">
             <div class="grid-col-xl-6 grid-col-lg-6 grid-col-12">

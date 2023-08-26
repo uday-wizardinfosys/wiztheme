@@ -1,0 +1,9 @@
+.contact_form_wrapper .title_wrapper {
+    margin-bottom: 35px;
+}
+
+.contact_form {
+    padding: 40px;
+    border-radius: 20px;
+    background-color: rgba(var(--color-primary-rgb),0.3);
+}

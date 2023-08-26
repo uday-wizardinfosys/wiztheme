@@ -65,15 +65,19 @@
           "label": "Button"
         },
         "button_primary_color": {
-          "label": "Dark Color",
-          "info": "Used as foreground color on accent colors."
+          "label": "Text"
         },
         "button_primary_background_color": {
-          "label": "Primary Color",
-          "info": "Used for solid button background."
+          "label": "Background"
         },
         "button_secondary_color": {
-          "label": "Dark Color",
+          "label": "Text"
+        },
+        "button_secondary_background_color": {
+          "label": "Background"
+        },
+        "button_outline_color": {
+          "label": "Color",
           "info": "Used for button border and foreground, when button background is transparent."
         }
       }

@@ -1,0 +1,110 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}--padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media screen and (min-width: 992px) {
+    .section-{{ section.id }}--padding {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="contact_form_wrapper page-width section-{{ section.id }}--padding">
+ <div class="title_wrapper">
+  <h6>Contact us</h6>
+  <h2>Do you have any question?</h2>
+    </div>
+
+  <form class="contact_form">
+    {%- if form.posted_successfully? -%}
+      <h6
+        class="form-status form__message"
+        tabindex="-1"
+        autofocus>
+        {% render 'icon-success' %}
+        {{ 'templates.contact.form.post_success' | t }}
+      </h6>
+    {%- elsif form.errors -%}
+      <h6
+        class="form-status form__message"
+        tabindex="-1"
+        autofocus>
+        {% render 'icon-error' %}
+        There is an issue. Please try again later.
+      </h6>
+    {%- endif -%}
+    <div class="grid-row">
+      <div class="grid-col-md-6 grid-col-12">
+        <div class="form_group">
+         <label class="form_label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+          <input
+            id="ContactForm-name"
+            class="form-control"
+            autocomplete="name"
+            type="text"
+            name="contact{{ 'templates.contact.form.name' | t }}"
+            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+            placeholder="{{ 'templates.contact.form.name' | t }}" />
+        </div>
+      </div>
+      <div class="grid-col-md-6 grid-col-12">
+        <div class="form_group">
+         <label class="form_label" for="ContactForm-email">{{ 'templates.contact.form.email' | t }}<span aria-hidden="true">*</span>
+          </label>
+          <input
+            id="ContactForm-email"
+            class="form-control"
+            autocomplete="email"
+            type="email"
+            name="contact{{ 'templates.contact.form.name' | t }}"
+            spellcheck="false"
+            autocapitalize="off"
+            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+            aria-required="true"
+            placeholder="{{ 'templates.contact.form.email' | t }}" />
+        </div>
+      </div>
+      <div class="grid-col-12">
+        <div class="form_group">
+         <label class="form_label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+          <input
+            type="tel"
+            id="ContactForm-phone"
+            class="form-control"
+            autocomplete="tel"
+            name="contact[{{ 'templates.contact.form.phone' | t }}]"
+            pattern="[0-9\-]*"
+            value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+            placeholder="{{ 'templates.contact.form.phone' | t }}">
+        </div>
+      </div>
+      <div class="grid-col-12">
+        <div class="form_group">
+         <label class="form_label" for="ContactForm-body">
+            {{- 'templates.contact.form.comment' | t -}}
+          </label>
+          <textarea
+            rows="10"
+            id="ContactForm-body"
+            class="text-area form-control"
+            name="contact[{{ 'templates.contact.form.comment' | t }}]"
+            placeholder="{{ 'templates.contact.form.comment' | t }}">
+            {{- form.body -}}
+          </textarea>
+        </div>
+      </div>
+      <div class="grid-col-12">
+          <div class="contact_form_button">
+            <button type="submit" class="btn btn-white btn-arrow">
+              {{ 'templates.contact.form.send' | t }} {% render 'icon-arrow-right' %}
+            </button>
+          </div>
+    </div>
+    </div>
+  </form>
+</div>

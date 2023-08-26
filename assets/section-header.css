@@ -65,9 +65,14 @@
     font-style: var(--navigation-font-style);
     font-weight: var(--navigation-font-weight);
     color: var(--color-dark);
+    background-color: transparent;
     text-decoration: none;
     text-transform: uppercase;
     transition: all .25s ease-in-out;
+}
+.menu-link:hover, .menu-link:focus {
+    color: var(--color-dark);
+    background-color: transparent;
 }
 .header-right {
     display: flex;

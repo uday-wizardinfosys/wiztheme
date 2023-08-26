@@ -37,28 +37,46 @@
       },
       {
         "type": "header",
-        "content": "Button"
+        "content": "Primary button"
       },
       {
         "type": "color",
         "id": "button_primary_color",
         "default": "#232323",
-        "label": "t:settings_schema.colors.settings.button_primary_color.label",
-        "info": "t:settings_schema.colors.settings.button_primary_color.info"
+        "label": "t:settings_schema.colors.settings.button_primary_color.label"
       },
       {
         "type": "color",
         "id": "button_primary_background_color",
         "default": "#ffd7d7",
-        "label": "t:settings_schema.colors.settings.button_primary_background_color.label",
-        "info": "t:settings_schema.colors.settings.button_primary_background_color.info"
+        "label": "t:settings_schema.colors.settings.button_primary_background_color.label"
+      },
+      {
+        "type": "header",
+        "content": "Secondary button"
       },
       {
         "type": "color",
         "id": "button_secondary_color",
         "default": "#232323",
-        "label": "t:settings_schema.colors.settings.button_secondary_color.label",
-        "info": "t:settings_schema.colors.settings.button_secondary_color.info"
+        "label": "t:settings_schema.colors.settings.button_secondary_color.label"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_background_color",
+        "default": "#ffd7d7",
+        "label": "t:settings_schema.colors.settings.button_secondary_background_color.label"
+      },
+      {
+        "type": "header",
+        "content": "Outline button"
+      },
+      {
+        "type": "color",
+        "id": "button_outline_color",
+        "default": "#232323",
+        "label": "t:settings_schema.colors.settings.button_outline_color.label",
+        "info": "t:settings_schema.colors.settings.button_outline_color.info"
       }
     ]
   },
