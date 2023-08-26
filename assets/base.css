@@ -799,16 +799,16 @@ iframe {
     margin-bottom: 16px;
 }
 .form_label {
+    font-size: 15px;
+    line-height: 1.2;
     margin: 5px;
 }
 .form-control {
   display: block;
   width: 100%;
-  padding: 15px;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--bs-dark);
+  padding: 15px 20px;
+  font-size: 15px;
+  color: var(--color-dark);
   background-color: var(--color-white);
   background-clip: padding-box;
   border: 1px solid rgba(var(--color-black-rgb),0.05);
